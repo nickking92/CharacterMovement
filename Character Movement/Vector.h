@@ -5,11 +5,14 @@ namespace Player {
     class Vector
     {
     public:
-        Vector();
+        Vector() {};
         Vector(float X, float Y);
         float LengthSqrt() const;
         float Length() const;
+        Vector Normalized() const;
         float x, y;
+        Vector operator+(const Vector& v) const;
+        Vector operator-(const Vector& v) const;
         Vector operator/(float s) const;
         Vector operator*(float s) const;
     };
@@ -17,6 +20,8 @@ namespace Player {
     class Point
     {
     public:
+        Point() {};
+        Point(float x, float y);
         Point AddVector(Vector v);
         float x, y;
     };

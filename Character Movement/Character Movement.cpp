@@ -38,14 +38,30 @@ int main()
 	//	" to reach player and distance between them is " << distanceBetween2 << std::endl;
 	/////////////////////////////////////////////////////////////////////////////////
 	//Player speed increase and decrease
-	Player::Vector v(3, 4);
+	/*Player::Vector v(3, 4);
 	std::cout << "Player initial speed" << v.Length() << std::endl;
 	Player::Vector doubled;
 	doubled = v * 2;
 	std::cout << "Player doubled speed" << doubled.Length() << std::endl;
 	Player::Vector halved;
 	halved = v / 2;
-	std::cout << "Player halved speed" << halved.Length() << std::endl;
+	std::cout << "Player halved speed" << halved.Length() << std::endl;*/
+	/////////////////////////////////////////////////////////////////////////
+	//where is player looking
+	/*Player::Point e(3, 4);
+	Player::Point p(1, 2);
+	Player::Vector pe = e - p;
+	Player::Vector normalized = pe.Normalized();
+	std::cout << "Players view vector" << normalized.x << ", " << normalized.y << ")\n";
+	std::cout << "Players view vector length" << normalized.Length()<<"\n";*/
+	//////////
+	//Move player diagonally
+	Player::Vector r(4, 0);
+	Player::Vector d(0, -5);
+
+	Player::Vector dg = r + d;
+	std::cout<<"Players new velocity is" <<dg.x <<" and" <<dg.y<<std::endl;
+
 
 	
 

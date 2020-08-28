@@ -1,12 +1,14 @@
 #include "Vector.h"
 namespace Player {
 
-    Vector::Vector()
-    {
-    }
 
     Vector::Vector(float X, float Y)
      :x(X),y(Y)
+    {
+    }
+
+    Point::Point(float X, float Y)
+        :x(X),y(Y)
     {
     }
 
@@ -44,6 +46,26 @@ namespace Player {
         length =sqrt(x * x + y * y);
 
         return length;
+    }
+
+    Vector Vector::Normalized() const
+    {
+        Vector normalized;
+        normalized = (*this) / Length();
+        return normalized;
+    }
+
+    Vector Vector::operator+(const Vector& v) const
+    {
+        Vector r;
+        r.x = x + v.x;
+        r.y = y + v.y;
+        return r;
+    }
+
+    Vector Vector::operator-(const Vector& v) const
+    {
+        return Vector(x - v.x,y - v.y);
     }
 
     Vector Vector::operator/(float s) const
